@@ -19,6 +19,7 @@ if ($getResults == FALSE)
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
  echo ($row['productid'] . " " . $row['name'].  PHP_EOL);
  echo("teste ");
+ echo(PHP_EOL);
 }
 
 sqlsrv_free_stmt($getResults);
