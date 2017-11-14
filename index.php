@@ -1,4 +1,15 @@
 <?php
+
+function get_data($url) {
+	$ch = curl_init();
+	$timeout = 5;
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+	$data = curl_exec($ch);
+	curl_close($ch);
+	return $data;
+}
 echo "Hello World!";
 
 $serverName = "sbr1.database.windows.net";
@@ -22,5 +33,9 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 }
 
 sqlsrv_free_stmt($getResults);
+
+$returned_content = get_data('https://davidwalsh.name');
+echo($returned_content);
+
 
 ?>
