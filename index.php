@@ -37,5 +37,9 @@ sqlsrv_free_stmt($getResults);
 $returned_content = get_data('https://davidwalsh.name');
 echo($returned_content);
 
+echo("<br>");
+
+if ($returned_content contains 'Ways')
+    echo 'achei ways';
 
 ?>
