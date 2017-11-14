@@ -9,7 +9,8 @@ $connectionOptions = array(
 );
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
+$tsql= "select top 100 productid,name from saleslt.Product";
 
-
+$getResults= sqlsrv_query($conn, $tsql);
 
 ?>
